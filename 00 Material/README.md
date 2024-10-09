@@ -7,6 +7,7 @@
 
 - Basic Setup
 - Clean Code
+- Routing
 </details>
 
 ---
