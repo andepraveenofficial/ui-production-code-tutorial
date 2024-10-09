@@ -10,22 +10,62 @@
 ### 2. husky
 
 - Install husky : `npm install -D husky`
-- Initialize husky : `npx husky init`
-- Add a `pre-commit` hook:
-  - Inside the **husky** folder, create a pre-commit file and add below code (These run before commit):
+- Initialize husky : `npx husky init` (`npx husky-init` to create `.husky` folder)
+- Add the `pre-commit` in `.husky` folder (If not) and add below code (These run before commit) in `pre-commit file`.
 
 ```bash
+# Run formatter
 npm run format
+
+# Run linter
 npm run lint
-npm run lint:fix
+
+# Fix lint error
+npm run lint-fix
+
+# git status
 git status
 ```
 
+- Add the `pre-push` in `.husky folder`.
+- Add below script in `pre-push file`
+
+```bash
+# Run formatter
+npm run format
+
+# Run linter
+npm run lint
+
+# Fix lint error
+npm run lint-fix
+
+# git status
+git status
+```
+
+- Add to action script in `package.json`
+
+```json
+  "scripts": {
+    "prepare": "husky install",
+    "precommit": "npm run lint-fix && npm run format",
+    "prepush": "npm run lint"
+  },
+```
+
+- Checking
+- `git commit -m "Test commit"`
+- `git push origin master`
+
 #### 3. Eslint
+
+A linter for identifying and reporting problems in your code.
 
 - Install eslint : `npm install -D eslint`
 - ESLint to understand TypeScript syntax : `npm install -D @typescript-eslint/parser`
 - linting rules specific to TypeScript : `npm install -D @typescript-eslint/eslint-plugin`
+- 2. Install react-plugin : `npm install -D eslint-plugin-react@latest`
 - Initialize eslint : `npx eslint --init`
 
 ```bash
@@ -127,8 +167,10 @@ export default [
 
 ### 4. prettier
 
+Code Formatter
+
 - Install prettier : `npm install -D prettier`
-- Create `.prettierrc` :
+- Create Prettier Configuration file `.prettierrc` :
 
 ```js
 {
@@ -142,14 +184,7 @@ export default [
 
 ```
 
-- Run prettier
-
-```json
-  "format:check": "npx prettier --check .",
-  "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,json}' --config ./.prettierrc"
-```
-
-- Add `.prettierignore`
+- Add the `.prettierignore` file.
 
 ```prettierignore
 rest-client
@@ -183,9 +218,18 @@ tsconfig.json
 
 ```
 
+- Run prettier in Scripts
+
+```json
+  "format:check": "npx prettier --check .",
+  "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,json}' --config ./.prettierrc"
+```
+
 #### 5. combine eslint and prettier
 
-- `npm install -D eslint-config-prettier eslint-plugin-prettier`
+- Install `npm install -D eslint-config-prettier eslint-plugin-prettier`
+- `eslint-config-prettier` : disables ESLint rules that conflict with Prettier.
+- `eslint-plugin-prettier` : Runs Prettier as an ESLint rule and reports differences as individual ESLint issues.
 
 ### 6. Other Useful Packages
 

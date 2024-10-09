@@ -18,12 +18,13 @@ export default [
       },
     },
 
+    rules:{},
+
     plugins: {
       prettier, // Use Prettier as a plugin object
       '@typescript-eslint': tseslint, // Add TypeScript ESLint as a plugin object
       react: pluginReact, // Add React plugin,
     },
-    rules: {},
   },
 
   {
