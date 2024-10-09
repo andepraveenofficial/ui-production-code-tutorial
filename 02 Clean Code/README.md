@@ -14,16 +14,9 @@
 - Add the `pre-commit` in `.husky` folder (If not) and add below code (These run before commit) in `pre-commit file`.
 
 ```bash
-# Run formatter
 npm run format
-
-# Run linter
 npm run lint
-
-# Fix lint error
-npm run lint-fix
-
-# git status
+npm run lint:fix
 git status
 ```
 
@@ -31,16 +24,9 @@ git status
 - Add below script in `pre-push file`
 
 ```bash
-# Run formatter
 npm run format
-
-# Run linter
 npm run lint
-
-# Fix lint error
-npm run lint-fix
-
-# git status
+npm run lint:fix
 git status
 ```
 
@@ -268,4 +254,5 @@ export default defineConfig({
 
 ### Start the Application
 
+- `git init`
 - `npm run dev`

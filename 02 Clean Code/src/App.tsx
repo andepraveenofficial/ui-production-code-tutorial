@@ -4,4 +4,4 @@ const App: React.FC = () => {
   return <div>App</div>;
 };
 
-export default Ap;
+export default App;

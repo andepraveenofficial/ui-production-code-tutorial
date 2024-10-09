@@ -1,11 +1,4 @@
-# Run formatter
 npm run format
-
-# Run linter
 npm run lint
-
-# Fix lint error
-npm run lint-fix
-
-# git status
+npm run lint:fix
 git status
