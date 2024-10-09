@@ -4,6 +4,8 @@ import tseslint from '@typescript-eslint/eslint-plugin';
 import pluginReact from 'eslint-plugin-react';
 import tsParser from '@typescript-eslint/parser';
 import prettier from 'eslint-plugin-prettier';
+import sonarjs from 'eslint-plugin-sonarjs'; // Add this import
+import importPlugin from 'eslint-plugin-import'; // Import ESLint Plugin Import
 
 export default [
   {
@@ -18,12 +20,14 @@ export default [
       },
     },
 
-    rules:{},
+    rules: {},
 
     plugins: {
-      prettier, // Use Prettier as a plugin object
+      prettier: prettier, // Use Prettier as a plugin object
       '@typescript-eslint': tseslint, // Add TypeScript ESLint as a plugin object
-      react: pluginReact, // Add React plugin,
+      react: pluginReact, // Add React plugin as an object
+      sonarjs: sonarjs, // Add SonarJS plugin as an object
+      import: importPlugin, // Add ESLint Plugin Import as an object
     },
   },
 
@@ -40,14 +44,6 @@ export default [
     // Write your own rules
     rules: {
       'react/react-in-jsx-scope': 'off',
-      'sort-imports': [
-        'error',
-        {
-          ignoreCase: true,
-          ignoreDeclarationSort: true,
-          allowSeparatedGroups: true,
-        },
-      ], // Sorting imports order
       'no-unused-vars': 'error', // Unused variables
       indent: ['error', 2], // Indentation
       quotes: ['error', 'single'], // Strings must be in single quotes
@@ -58,6 +54,21 @@ export default [
       curly: ['error', 'all'], // Require curly braces for all control statements
       camelcase: 'error', // Use camelCase for variable and function names
       'no-trailing-spaces': 'error', // Disallow trailing whitespace at the end of lines
+      'sonarjs/cognitive-complexity': ['error', 15], // SonarJS rule
+      'sonarjs/no-duplicate-string': ['error', { threshold: 5 }], // Corrected SonarJS rule with object
+      'import/order': [
+        'error',
+        {
+          groups: [
+            ['builtin', 'external'],
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+          ],
+          'newlines-between': 'always', // Enforce new lines between different groups
+        },
+      ],
     },
   },
 ];

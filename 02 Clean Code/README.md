@@ -217,7 +217,42 @@ tsconfig.json
 - `eslint-config-prettier` : disables ESLint rules that conflict with Prettier.
 - `eslint-plugin-prettier` : Runs Prettier as an ESLint rule and reports differences as individual ESLint issues.
 
-### 6. Other Useful Packages
+### 6. Some Useful Eslint Packages
+
+1. Sonar : `npm install -D eslint-plugin-sonarjs`
+
+```js
+import sonarjs from 'eslint-plugin-sonarjs'; // Add this import
+
+ plugins: {
+      prettier: prettier, // Use Prettier as a plugin object
+      '@typescript-eslint': tseslint, // Add TypeScript ESLint as a plugin object
+      react: pluginReact, // Add React plugin as an object
+      sonarjs: sonarjs, // Add SonarJS plugin as an object
+    },
+
+    "rules": {
+    // You can customize SonarJS rules here
+   'sonarjs/cognitive-complexity': ['error', 15], // SonarJS rule
+   'sonarjs/no-duplicate-string': ['error', { threshold: 5 }], // Corrected SonarJS rule with object
+  }
+```
+
+2. imports : `npm install -D eslint-plugin-import`
+
+```js
+import importPlugin from 'eslint-plugin-import'; // Import ESLint Plugin Import
+
+plugins: {
+      prettier: prettier, // Use Prettier as a plugin object
+      '@typescript-eslint': tseslint, // Add TypeScript ESLint as a plugin object
+      react: pluginReact, // Add React plugin as an object
+      sonarjs: sonarjs, // Add SonarJS plugin as an object
+      import: importPlugin, // Add ESLint Plugin Import as an object
+    },
+```
+
+### 7. Other Useful Packages
 
 1. rollup visualizer : `npm install -D rollup-plugin-visualizer`
 
