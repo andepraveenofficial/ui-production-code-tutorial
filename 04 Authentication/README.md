@@ -1,4 +1,4 @@
-# Routing
+# Authentication
 
 ## Template
 
@@ -10,10 +10,10 @@
 2. Routing : `react-router-dom`
 3. Bundler : vite
 
-### Setup Router
+### Authentication
 
-- Install Router : `npm install react-router-dom`
-- Create ErrorBoundary
+- Public Routes
+- Private Routes
 
 ### Setup
 

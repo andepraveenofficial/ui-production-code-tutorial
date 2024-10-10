@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 /* -----> Router <---- */
-import router from "./router";
+import router from "./routes";
 import Loading from "./pages/Loading";
 import { ErrorBoundary } from "./utils/ErrorBoundary";
 
