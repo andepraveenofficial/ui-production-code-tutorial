@@ -8,6 +8,9 @@
 - Basic Setup
 - Clean Code
 - Routing
+- Authentication
+- Authorization
+
 </details>
 
 ---

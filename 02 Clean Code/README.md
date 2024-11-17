@@ -5,25 +5,28 @@
 #### 1. Initialize git
 
 - Run `git init`
-- Create a `.gitignore` file (ensure to include `node_modules/`, `.env`, and `dist/` in it).
+- Create a `.gitignore` file 
+
+```.gitignore
+node_modules
+.env
+dist/
+```
 
 ### 2. husky
 
 - Install husky : `npm install -D husky`
 - Initialize husky : `npx husky init` (`npx husky-init` to create `.husky` folder)
-- Add the `pre-commit` in `.husky` folder (If not) and add below code (These run before commit) in `pre-commit file`.
+- Add the `pre-commit` in `.husky` folder (If not) and add below code (These run before commit) in `pre-commit` file.
 
-```bash
-npm run format
-npm run lint
-npm run lint:fix
-git status
+```
+echo 'Husky is working!'
 ```
 
-- Add the `pre-push` in `.husky folder`.
-- Add below script in `pre-push file`
+-  Add the `pre-push` in `.husky` folder (If not) and add below code (These run before commit) in `pre-push` file.
 
 ```bash
+echo 'Husky is working!'
 npm run format
 npm run lint
 npm run lint:fix
@@ -40,7 +43,7 @@ git status
   },
 ```
 
-- Checking
+- Checking After All Setup
 - `git commit -m "Test commit"`
 - `git push origin master`
 
@@ -51,7 +54,7 @@ A linter for identifying and reporting problems in your code.
 - Install eslint : `npm install -D eslint`
 - ESLint to understand TypeScript syntax : `npm install -D @typescript-eslint/parser`
 - linting rules specific to TypeScript : `npm install -D @typescript-eslint/eslint-plugin`
-- 2. Install react-plugin : `npm install -D eslint-plugin-react@latest`
+-  Install react-plugin : `npm install -D eslint-plugin-react@latest`
 - Initialize eslint : `npx eslint --init`
 
 ```bash
@@ -276,6 +279,11 @@ export default defineConfig({
 ```
 
 - See the Report : `npm run build`
+
+#### Checking After All Setup
+
+- `git commit -m "Test commit"`
+- `git push origin master`
 
 ### Setup
 

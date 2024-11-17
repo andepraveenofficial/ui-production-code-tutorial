@@ -10,19 +10,19 @@ import { ErrorBoundary } from "./utils/ErrorBoundary";
 // const Loading = () => <div>Loading...</div>;
 
 const App: React.FC = () => {
-  return (
-    <BrowserRouter basename="/app">
-      <Suspense fallback={<Loading />}>
-        <ErrorBoundary>
-          <Routes>
-            {router.map((route, index) => (
-              <Route key={index} path={route.path} element={route.element} />
-            ))}
-          </Routes>
-        </ErrorBoundary>
-      </Suspense>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter basename="/app">
+			<Suspense fallback={<Loading />}>
+				<ErrorBoundary>
+					<Routes>
+						{router.map((route, index) => (
+							<Route key={index} path={route.path} element={route.element} />
+						))}
+					</Routes>
+				</ErrorBoundary>
+			</Suspense>
+		</BrowserRouter>
+	);
 };
 
 export default App;

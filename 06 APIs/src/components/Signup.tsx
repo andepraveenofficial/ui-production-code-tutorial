@@ -129,6 +129,7 @@ const SignupForm: React.FC = () => {
           required
         />
       </div>
+
       <div>
         <label>Email:</label>
         <input
