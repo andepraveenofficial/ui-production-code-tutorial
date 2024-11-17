@@ -9,7 +9,6 @@ const Contact = lazy(() => import("../pages/Contact"));
 const Login = lazy(() => import("../pages/Login"));
 const Course = lazy(() => import("../pages/Course"));
 const Support = lazy(() => import("../pages/Support"));
-const Unauthorized = lazy(() => import("../pages/Unauthorized"));
 
 interface IRoute {
 	path: string;
