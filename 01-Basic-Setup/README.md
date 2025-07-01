@@ -1,10 +1,17 @@
 # Basic Setup
 
-### Techstack
+### Tech Stack
 
-1. UI : React
-1. Bundler : Vite
-1. Language : Typescript
+- UI Layer: React
+- Language: Typescript
+- Build Tool: Vite
+
+### Setup
+
+1. `npm install -g npm`
+2. `npx create-vite .`
+3. Select React
+4. Select Typescript
 
 ### Installation
 
@@ -14,4 +21,11 @@
 
 - `npm run dev`
 
-# React + TypeScript + Vite
+### Avoid Errors
+
+- I added "incremental": true to the compilerOptions
+- Incremental compilation helps TypeScript compile only the files that have changed since the last compilation, which can significantly speed up build times
+
+```json tsconfig.app.json
+ "incremental": true,
+```
